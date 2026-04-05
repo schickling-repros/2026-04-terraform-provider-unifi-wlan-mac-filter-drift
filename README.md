@@ -86,4 +86,4 @@ The PUT payload includes `"schedule_with_duration":null` which the controller do
 
 ## Related Issue
 
-<!-- Will be filled in after filing -->
+https://github.com/ubiquiti-community/terraform-provider-unifi/issues/143
