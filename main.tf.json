@@ -1,0 +1,34 @@
+{
+  "terraform": {
+    "required_providers": {
+      "unifi": {
+        "source": "ubiquiti-community/unifi",
+        "version": "0.41.25"
+      }
+    }
+  },
+  "provider": {
+    "unifi": {
+      "api_url": "https://localhost:8443",
+      "allow_insecure": true
+    }
+  },
+  "variable": {
+    "wlan_passphrase": {
+      "type": "string",
+      "sensitive": true
+    }
+  },
+  "resource": {
+    "unifi_wlan": {
+      "test": {
+        "name": "Test SSID",
+        "security": "wpapsk",
+        "passphrase": "${var.wlan_passphrase}",
+        "network_id": "REPLACE_WITH_YOUR_NETWORK_ID",
+        "user_group_id": "REPLACE_WITH_YOUR_USER_GROUP_ID",
+        "wlan_bands": ["2g", "5g"]
+      }
+    }
+  }
+}
